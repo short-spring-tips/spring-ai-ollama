@@ -1,0 +1,12 @@
+services:
+  ollama:
+    image: ghcr.io/dashaun/testcontainer-ollama-phi4-mini:latest
+    ports:
+      - "11434"
+    labels:
+      org.springframework.boot.service-connection: ollama
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 2s
+      timeout: 2s
+      retries: 30
