@@ -2,7 +2,7 @@ services:
   ollama:
     image: ghcr.io/dashaun/testcontainer-ollama-phi4-mini:latest
     ports:
-      - "11434"
+      - "11435:11434"
     labels:
       org.springframework.boot.service-connection: ollama
     healthcheck:
